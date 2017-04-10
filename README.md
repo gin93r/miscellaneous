@@ -22,7 +22,5 @@ Small workflow script for a friend. It's probably pretty sloppy; I didn't know v
 
 ---
 
-If you found any of this useful and want to buy me a cup of coffee, cash me. 
-
-<a href="https://cash.me/$CarlMorlock"><img src="img/cash-button-green.png" style="width:125px;"/></a>
+If you found any of this useful and want to buy me a cup of coffee, [cash me](https://cash.me/$CarlMorlock). 
 
