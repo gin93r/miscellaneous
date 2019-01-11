@@ -13,7 +13,7 @@ Private Sub generateFiles()
     
     'Set the excel workbook and worksheets
     Set wb = ThisWorkbook
-    Set ws = wb.Worksheets("Sheet1")
+    Set ws = wb.Worksheets("Insert tracking")
     
     Dim saveDir As FileDialog
     Dim savePath As String
@@ -72,11 +72,13 @@ CreateFile:
     Application.ScreenUpdating = False
     NumRows = Range("A" & startingCell, Range("A" & startingCell).End(xlDown)).Rows.Count
     For i = startingCell To startingCell + NumRows - 1
-
+    
         If Cells(i, 1) <> "" Then
             ItemNumber = Cells(i, 1)
             ItemName = Cells(i, 2)
             strFullName = ItemNumber & " - " & ItemName
+            strFullName = Replace(strFullName, ":", "")
+            strFullName = Replace(strFullName, "/", "")
             Set fs = CreateObject("Scripting.FileSystemObject")
             fs.CreateFolder (savePath & "\" & strFullName)
             
@@ -115,4 +117,3 @@ CreateFile:
     wdApp.Quit
     MsgBox ("Finished")
 End Sub
-
